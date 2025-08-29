@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\Safe.csproj",
+      "projectUniqueName": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\CaffeySafe\\Safe.csproj",
       "projectName": "Safe",
-      "projectPath": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\Safe.csproj",
+      "projectPath": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\CaffeySafe\\Safe.csproj",
       "packagesPath": "C:\\Users\\Jeux\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\obj\\",
+      "outputPath": "D:\\Documents Persos\\Ressources\\Gestionnaire\\Safe\\CaffeySafe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jeux\\AppData\\Roaming\\NuGet\\NuGet.Config"
