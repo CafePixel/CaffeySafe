@@ -1,0 +1,12 @@
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\bin\Release\net9.0\Safe.deps.json
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\bin\Release\net9.0\Safe.dll
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\bin\Release\net9.0\Safe.pdb
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.AssemblyInfoInputs.cache
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.AssemblyInfo.cs
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.csproj.CoreCompileInputs.cache
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.sourcelink.json
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.dll
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\refint\Safe.dll
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\Safe.pdb
+D:\Documents Persos\Ressources\Gestionnaire\Safe\CaffeySafe\obj\Release\net9.0\ref\Safe.dll
