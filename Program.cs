@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Cafey.Utils;
+namespace Caffey.Utils;
 
 /// <summary>
 /// Fonction Safe utile lors de mon codage sous c#.
@@ -46,8 +46,32 @@ public static class Safe
         return first +
                 $"Précision : {error}\n" +
                 $"A {memberName} dans {filePath} à la ligne : {lineNumber}\n";
-
     }
+    public static string ThrowWithoutError(
+        string problem = "",
+        string? name = null,
+        Exception? error = null,
+        [CallerMemberName] string memberName = "",
+        [CallerFilePath] string filePath = "",
+        [CallerLineNumber] int lineNumber = 0)
+    {
+        string first;
+        if (name == null)
+            first = $"Problème : {problem} \n";
+        else
+            first = $"[{name}] A eu un problème : {problem} \n";
+
+        string second = "";
+        if (error == null)
+            second = "";
+        else
+            second = $"Précision : {error}\n";
+
+        return  first +
+                second +
+                $"A {memberName} dans {filePath} à la ligne : {lineNumber}\n";
+    }
+
 
     public static T TryOrReturn<T>(Func<T> func, SafeWriter writer, T fallback, string context = "", string? name = null)
     {
@@ -57,7 +81,6 @@ public static class Safe
             writer.Log(ThrowError(e, context, name));
             return fallback;
         }
-
     }
     public static T TryOrReturn<T>(Func<T> func, T fallback, string context = "", string? name = null)
     {
@@ -77,6 +100,15 @@ public static class Safe
         TryOrPass(action, DefaultWriter, context, name);
     }
 
+    public static void TryOrPanicNull(Action action, string context = "", string? name = null)
+    {
+        try { action(); }
+        catch (Exception e)
+        {
+            throw new Exception(ThrowError(e, context, name), e);
+        }
+    }
+    
     public static T TryOrPanic<T>(Func<T> func, string context = "", string? name = null)
     {
         try { return func(); }
@@ -84,8 +116,8 @@ public static class Safe
         {
             throw new Exception(ThrowError(e, context, name), e);
         }
-
     }
+
     public static T TryOrStackTrace<T>(Func<T> func, SafeWriter writer, string context = "", string? name = null)
     {
         try { return func(); }
@@ -121,18 +153,15 @@ public class SafeWriter
     public string Name { get; init; }
     public Action<string> LogMessage { get; init; }
 
-
     public SafeWriter(String name, Action<String> logAction)
     {
         Name = name;
         LogMessage = logAction;
-
     }
 
     public void Log(string message)
     {
         LogMessage?.Invoke($"{message}");    
-
     }
 
 }
