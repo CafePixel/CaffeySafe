@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CaffeyUtils.Safe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c872f580f46b2a700df8a29be29f72c33a25b77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c55415ed80f24f9358748412249b28b67d86900")]
 [assembly: System.Reflection.AssemblyProductAttribute("CaffeyUtils.Safe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CaffeyUtils.Safe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

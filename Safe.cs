@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 
 namespace Caffey.Utils;
 
+//TODO: Add TryOrFalse => Return bool si raté;
+
 /// <summary>
 /// Fonction Safe utile lors de mon codage sous c#.
 /// J'avais besoin d'éviter les appels à chaque fois.
@@ -67,7 +69,7 @@ public static class Safe
         else
             second = $"Précision : {error}\n";
 
-        return  first +
+        return first +
                 second +
                 $"A {memberName} dans {filePath} à la ligne : {lineNumber}\n";
     }
@@ -99,6 +101,23 @@ public static class Safe
     {
         TryOrPass(action, DefaultWriter, context, name);
     }
+    public static bool TryOrFalse(Action action, SafeWriter writer, string context = "", string? name = null)
+    {
+        try
+        {
+            action();
+            return true;
+        }
+        catch (Exception e)
+        {
+            writer.Log(ThrowError(e, context, name));
+            return false;
+        }
+    }
+    public static bool TryOrFalse(Action action, string context = "", string? name = null)
+    {
+        return TryOrFalse(action, DefaultWriter, context, name);
+    }
 
     public static void TryOrPanicNull(Action action, string context = "", string? name = null)
     {
@@ -108,7 +127,7 @@ public static class Safe
             throw new Exception(ThrowError(e, context, name), e);
         }
     }
-    
+
     public static T TryOrPanic<T>(Func<T> func, string context = "", string? name = null)
     {
         try { return func(); }
