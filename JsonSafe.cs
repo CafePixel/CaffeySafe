@@ -60,7 +60,7 @@ public static class JsonSafe
             throw new ArgumentNullException(nameof(path), "Path is empty");
             
         if (!File.Exists(path))
-            throw new ArgumentNullException($"File not exist à : {path}");
+            throw new FileNotFoundException($"File not exist à : {path}");
 
         string? json = null;
 
@@ -78,16 +78,27 @@ public static class JsonSafe
 
         try
         {
+            var options = new JsonSerializerOptions
+
+            {
+                PropertyNameCaseInsensitive = true,
+                IncludeFields = true
+            };
+
             var obj = JsonSerializer.Deserialize<T>(json);
 
             if (obj == null)
-                throw new NullReferenceException("Can't deserialise Json.");
-            
+                throw new NullReferenceException("Json return null.");
+
             return obj;
+        }
+        catch (JsonException e)
+        {
+            throw new Exception($"Deserialization error, {e.Message}", e);
         }
         catch (Exception e)
         {
-            throw new Exception($"Deserialization error, {e.Message}", e);
+            throw new Exception($"Unknown error when deserialisation, {e.Message}", e);
         }
 
     }
